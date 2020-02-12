@@ -26,9 +26,9 @@ html_head="""
 </head>
 """
 
-html_body=""" <body> """+view.display()
+html_body=""" <body> <p>"""+view.display()+"""</p>"""
 
 html_foot=""" </body> </html> """
 
-print("Content-type: text/html; charset=utf-8\n")
-print(html_head+html_body+display+html_foot)
+print("Content-type: text/html; charset=utf-8")
+print(html_head+html_body+html_foot)
