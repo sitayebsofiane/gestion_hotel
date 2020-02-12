@@ -13,6 +13,9 @@ if form.getvalue("titre") and form.getvalue("resume") and form.getvalue("date") 
     date = form.getvalue("date")
     id_speaker = form.getvalue("id_speaker")
     model.insert_conf(titre,resume,date,id_speaker)
+if form.getvalue("id_conf"):
+    id_conf = form.getvalue("id_conf")
+    model.delete_conf(id_conf)
     
 html_head="""
 <!DOCTYPE html>
@@ -37,15 +40,16 @@ html_body="""<body>
      
             <label for="titre">Quel est le titre de la conference ?</label>
             <input type="text" name="titre" id="titre" />
-     
-            <label for="resume">Quel est le resumer ?</label>
-            <input type="text" name="resume" id="resume" />
       
             <label for="date">la date ?</label>
             <input type="date" name="date" id="date" />
 
             <label for="id_speaker">id_speaker ?</label>
             <input type="number" name="id_speaker" id="id_speaker" />
+            <p>
+                <label for="resume">veuillez resumer:</label>
+                <textarea name="resume" id="resume" cols="100%" rows="4"></textarea>
+            </p>
         </fieldset>
         <fieldset>
             <legend>suprimer une conference</legend> <!-- Titre du fieldset --> 
@@ -53,6 +57,7 @@ html_body="""<body>
             <label for="id_conf">Quel est l'id de la conference que tu veut suprimer</label>
             <input type="number" name="id_conf" id="id_conf" />
         </fieldset>
+        <input type="submit" value="Envoyer" />
    </form>
 """
 
