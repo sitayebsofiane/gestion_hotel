@@ -1,7 +1,4 @@
 import psycopg2
-import hashlib
-import calendar
-from datetime import datetime
 
 class Model:
 
@@ -53,14 +50,37 @@ class Model:
             return True
         except:
             return False
-    """ delete conference """
-    def delete_conf(self,id_conf):
+    """ insert to speakers """
+    def insert_speaker(self,nom,prenom,desc,profession):
         try:
             self.curseur = self.con.cursor()
-            self.curseur.execute("DELETE FROM conference WHERE id_conference = %s;",(id_conf))
+            self.curseur.execute("INSERT INTO speakrs(nom,prenom, description,profession)VALUES (%s,%s,%s,%s);",
+            (nom,prenom,desc,profession))
             self.con.commit()
             self.curseur.close()
             return True
         except:
             return False
+
+    """ delete conference """
+    def delete_conf(self,id_conf):
+        try:
+            self.curseur = self.con.cursor()
+            self.curseur.execute("DELETE FROM conference WHERE id_conference = %s;",(id_conf,))
+            self.con.commit()
+            self.curseur.close()
+            return True
+        except:
+            return False
+    """ delete speakers """
+    def delete_speaker(self,id_speaker):
+        try:
+            self.curseur = self.con.cursor()
+            self.curseur.execute("DELETE FROM speakrs WHERE id_speaker = %s;",(id_speaker,))
+            self.con.commit()
+            self.curseur.close()
+            return True
+        except:
+            return False
+
 

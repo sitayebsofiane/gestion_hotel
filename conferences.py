@@ -7,6 +7,7 @@ cgitb.enable
 form = cgi.FieldStorage()
 model = Model("hotel","postgres","as122014","localhost","5432")
 view = View(model)
+
 if form.getvalue("titre") and form.getvalue("resume") and form.getvalue("date") and form.getvalue("id_speaker"):
     titre = form.getvalue("titre")
     resume = form.getvalue("resume")
@@ -36,7 +37,7 @@ html_body="""<body>
  <form method="post">
  
         <fieldset>
-            <legend>Ajouter une conference</legend> <!-- Titre du fieldset --> 
+            <legend>Ajouter une conference</legend> 
      
             <label for="titre">Quel est le titre de la conference ?</label>
             <input type="text" name="titre" id="titre" />
@@ -52,8 +53,7 @@ html_body="""<body>
             </p>
         </fieldset>
         <fieldset>
-            <legend>suprimer une conference</legend> <!-- Titre du fieldset --> 
-     
+            <legend>suprimer une conference</legend>
             <label for="id_conf">Quel est l'id de la conference que tu veut suprimer</label>
             <input type="number" name="id_conf" id="id_conf" />
         </fieldset>
