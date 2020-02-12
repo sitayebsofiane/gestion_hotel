@@ -2,11 +2,13 @@
 class Entities:
 
     def __init__(self,data):
+        self.id_speaker=None
         self.nom=None
         self.prenom=None
         self.description=None
         self.profession=None
         self.statut=None
+        self.id_conference=None
         self.titre=None
         self.resume=None
         self.date=None

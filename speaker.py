@@ -1,5 +1,5 @@
 
-from view.entities import Entities
+from entities import Entities
 
 class  Speaker(Entities):
 
@@ -9,4 +9,4 @@ class  Speaker(Entities):
     """ representation  """ 
     def __repr__(self): 
 
-        return "Speaker: nom({}), prenom({})".format(self.nom, self.prenom)
+        return "Speaker: ID_speaker({}),nom({}), prenom({})".format(self.id_speaker,self.nom, self.prenom)

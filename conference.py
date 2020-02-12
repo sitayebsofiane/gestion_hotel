@@ -1,5 +1,5 @@
 
-from view.entities import Entities
+from entities import Entities
 
 class  Conference(Entities):
 

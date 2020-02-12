@@ -25,9 +25,11 @@ html_head="""
 </head>
 """
 
-html_body=""" <body> <p>"""+view.display()+"""</p>"""
+html_body=""" <body> <p>"""+view.display_speakers()+"""</p>"""
 
-html_foot=""" </body> </html> """
+html_foot="""  <p>si voulez retourner a l'acueil clique <a href="index.py">ici</a></p>
+                </body> 
+                </html> """
 
 print("Content-type: text/html; charset=utf-8")
 print(html_head+html_body+html_foot)
