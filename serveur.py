@@ -1,11 +1,13 @@
 import http.server
-import socketserver
+
 
 port = 80
 adress = ("",port)
-handler = http.server.SimpleHTTPRequestHandler
-httpd = socketserver.TCPServer(adress,handler)
-print(f"serveur demarré sur le port {port}")
+server = http.server.HTTPServer
+handler = http.server.CGIHTTPRequestHandler
+handler.cgi_directories =["/"]
+httpd = server(adress,handler)
+print(f"Serveur demarré sur le port{port}")
 #------------------------------------------------
 #demarré le serveur en boucle
 httpd.serve_forever()
