@@ -1,10 +1,12 @@
 import cgi
 import cgitb
-
+from model.model import Model
+from view.view import View
 cgitb.enable
 
 form = cgi.FieldStorage()
-
+model = Model("hotel","postgres","as122014","localhost","5432")
+view = View(model)
 # securisation
 try:
     if form.getvalue("nom") and form.getvalue("pass"):
@@ -24,13 +26,9 @@ html_head="""
 </head>
 """
 
-html_body="""
-<body>
-"""
+html_body=""" <body> """+view.display()
 
-html_foot="""
-</body>
-</html>
-"""
+html_foot=""" </body> </html> """
+
 print("Content-type: text/html; charset=utf-8\n")
 print(html_head+html_body+display+html_foot)
