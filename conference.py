@@ -9,4 +9,4 @@ class  Conference(Entities):
     """ representation  """ 
     def __repr__(self): 
 
-        return "Conference: titre({}), resume({}),date({})".format(self.titre, self.resume,self.date)
+        return "Conference: ID_confernce({}), titre({}), resume({}),date({})".format(self.id_conference,self.titre, self.resume,self.date)

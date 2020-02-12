@@ -16,13 +16,14 @@ class Model:
     def get_all(self):
         try:
             self.curseur=self.con.cursor()
-            self.curseur.execute("""select s.id_speaker, s.nom,s.prenom,c.titre,c.resume,c.date from 
+            self.curseur.execute("""select s.id_speaker, s.nom,s.prenom,c.id_conference,c.titre,c.resume,c.date from 
                                 speakrs as s join conference as c on s.id_speaker = c.id_speaker;""")
             rows=self.curseur.fetchall()
             self.curseur.close()
             liste = list()
             for row in rows:
-                liste.append({'id_speaker':row[0],'nom':row[1],'prenom': row[2], 'titre':row[3],'resume':row[4], 'date': row[5]})
+                liste.append({'id_speaker':row[0],'nom':row[1],'prenom': row[2], 'id_conference':row[3],
+                'titre':row[4],'resume':row[5], 'date': row[6]})
             return liste
         except(Exception ,psycopg2.Error):
             print("erreur while selecting")
@@ -41,3 +42,6 @@ class Model:
             return liste
         except(Exception ,psycopg2.Error):
             print("erreur while selecting")
+    """ insert to confercence """
+    def insert_conf(self,titre,resume,date,id_speaker):
+        

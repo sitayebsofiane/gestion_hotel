@@ -20,14 +20,18 @@ html_head="""
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
+    <style> 
+            p{
+            background-color:rgb(8, 184, 52);;
+                }
+    </style>
     <title>Page test python html</title>
 </head>
 """
 
 html_body=""" <body> <p>"""+view.display_speakers()+"""</p>"""
 
-html_foot="""  <p>si voulez retourner a l'acueil clique <a href="index.py">ici</a></p>
+html_foot="""  <h2>si voulez retourner a l'acueil clique <a href="index.py">ici</a></h2>
                 </body> 
                 </html> """
 

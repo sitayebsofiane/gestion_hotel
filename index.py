@@ -8,13 +8,17 @@ html="""
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
+    <style> 
+            p{
+            background-color: rgb(8, 184, 52);;
+                }
+    </style>
     <title>Page test python html</title>
 </head>
 <body>
     <h1>hello tout le monde</h1>
-    <p>si voulez gerer les conference taper <a href="conferences.py">ici</a></p>
-    <p>si voulez gerer les conferencier taper <a href="speakers.py">ici</a></p>
+    <h2>si voulez gerer les conference taper <a href="conferences.py">ici</a></h2>
+    <h2>si voulez gerer les conferencier taper <a href="speakers.py">ici</a><h2p>
     
 </body>
 </html>
