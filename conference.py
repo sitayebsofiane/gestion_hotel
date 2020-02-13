@@ -4,6 +4,10 @@ from entities import Entities
 class  Conference(Entities):
 
     def __init__(self,data):
+        self.id_conference=None
+        self.titre=None
+        self.resume=None
+        self.date=None
         Entities.__init__(self,data)
     
     """ representation  """ 
