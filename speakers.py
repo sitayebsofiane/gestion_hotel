@@ -3,6 +3,10 @@ import cgitb
 from model.model import Model
 from view import View
 cgitb.enable
+import os
+import sys,codecs
+#gestion encodage
+sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 
 form = cgi.FieldStorage()
 model = Model("hotel","postgres","as122014","localhost","5432")
